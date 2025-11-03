@@ -12,11 +12,25 @@ repositories {
     maven("https://repo.papermc.io/repository/maven-public/") {
         name = "papermc-repo"
     }
+    maven("https://oss.sonatype.org/content/groups/public/") {
+        name = "sonatype"
+    }
+    maven("https://nexus.scarsz.me/content/groups/public/") {
+        name = "scarsz-repo"
+    }
 }
 
+val paperApiVersion = "1.21.8-R0.1-SNAPSHOT"
+val discordSRVVersion = "1.30.2"
+val configUpdaterVersion = "2.2-SNAPSHOT"
+val protocolLibVersion = "5.4.0"
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:$paperApiVersion")
+    compileOnly("com.discordsrv:discordsrv:$discordSRVVersion")
+    compileOnly("net.dmulloy2:ProtocolLib:$protocolLibVersion")
+
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("com.tchristofferson:ConfigUpdater:$configUpdaterVersion")
 }
 
 tasks {

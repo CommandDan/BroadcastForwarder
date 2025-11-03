@@ -5,3 +5,9 @@ api-version: '1.21'
 prefix: Forwarder
 authors: [ Marcus Rokatis ]
 description: Forward broadcasts to DiscordSRV
+dependencies:
+  server:
+    DiscordSRV:
+      load: BEFORE
+    ProtocolLib:
+      load: BEFORE
